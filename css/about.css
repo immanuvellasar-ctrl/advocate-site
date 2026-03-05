@@ -1,0 +1,138 @@
+/* ============================================
+   ADVOCATE SITE — About Page
+   File: css/about.css
+   ============================================ */
+
+#bio { padding: 6rem 2rem; }
+.bio-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+.bio-photo-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; text-align: center; padding: 2rem;
+}
+.bio-photo-placeholder p { font-size: 0.85rem; color: var(--slate); }
+.bio-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; }
+
+.bio-credentials {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+.cred-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.cred-item:last-child { border-bottom: none; }
+.cred-icon { font-size: 1.2rem; flex-shrink: 0; }
+.cred-title { font-size: 0.85rem; font-weight: 600; color: var(--heading); }
+.cred-year { font-size: 0.72rem; color: var(--slate); margin-top: 0.15rem; }
+
+.bio-text p {
+  font-size: 0.95rem; color: var(--body);
+  line-height: 1.85; font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.bio-quote {
+  border-left: 3px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  background: var(--accent-lt);
+  margin: 2rem 0;
+}
+blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+cite { font-size: 0.78rem; color: var(--slate); font-style: normal; font-weight: 500; }
+
+/* Timeline */
+#timeline { padding: 6rem 2rem; background: var(--off-white); }
+.timeline-header { margin-bottom: 4rem; }
+.timeline {
+  position: relative;
+  max-width: 800px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 100px; top: 0; bottom: 0;
+  width: 1px; background: var(--border);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 20px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.tl-year {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--slate);
+  text-align: right;
+  padding-top: 0.2rem;
+}
+.tl-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 3px var(--border);
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+  justify-self: center;
+}
+.tl-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-lt);
+}
+.tl-content h4 {
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--heading); margin-bottom: 0.4rem;
+}
+.tl-content p { font-size: 0.85rem; color: var(--slate); line-height: 1.75; font-weight: 300; }
+
+/* Awards */
+#awards { padding: 6rem 2rem; }
+.awards-header { margin-bottom: 3rem; }
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.award-card {
+  border: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.award-card:hover { box-shadow: var(--shadow-sm); }
+.award-icon { font-size: 2rem; margin-bottom: 1rem; }
+.award-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--heading); margin-bottom: 0.4rem; }
+.award-card p { font-size: 0.78rem; color: var(--slate); font-weight: 300; }
+
+@media (max-width: 900px) {
+  .bio-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .awards-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline::before { left: 80px; }
+}
+@media (max-width: 540px) {
+  .awards-grid { grid-template-columns: 1fr; }
+  .timeline::before { display: none; }
+  .timeline-item { grid-template-columns: 50px 1fr; }
+  .tl-dot { display: none; }
+}

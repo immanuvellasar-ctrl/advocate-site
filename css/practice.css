@@ -1,0 +1,88 @@
+/* ============================================
+   ADVOCATE SITE — Practice Areas Page
+   File: css/practice.css
+   ============================================ */
+
+#practice-list { padding: 5rem 0; }
+
+.practice-block {
+  padding: 5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.practice-block:last-child { border-bottom: none; }
+.practice-block-alt { background: var(--off-white); }
+
+.pb-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto 2.5rem;
+}
+.pb-icon { font-size: 2.5rem; flex-shrink: 0; padding-top: 0.5rem; }
+
+.pb-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5rem;
+  align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.pb-desc p {
+  font-size: 0.95rem; color: var(--body);
+  line-height: 1.85; font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.pb-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.pb-service-item {
+  font-size: 0.82rem;
+  color: var(--body);
+  padding: 0.6rem 0.8rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  font-weight: 400;
+  border-radius: 2px;
+}
+.practice-block-alt .pb-service-item { background: var(--white); }
+
+.pb-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 180px;
+}
+.pb-stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+}
+.practice-block-alt .pb-stat { background: var(--white); }
+.ps-num {
+  font-family: var(--font-serif);
+  font-size: 2rem; color: var(--heading);
+  line-height: 1; margin-bottom: 0.3rem;
+}
+.ps-label {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+@media (max-width: 900px) {
+  .pb-body { grid-template-columns: 1fr; gap: 2rem; }
+  .pb-stats { flex-direction: row; flex-wrap: wrap; }
+  .pb-stat { flex: 1; min-width: 120px; }
+}
+@media (max-width: 540px) {
+  .pb-services { grid-template-columns: 1fr; }
+  .practice-block { padding: 3rem 1.5rem; }
+}
